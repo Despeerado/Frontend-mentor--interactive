@@ -23,12 +23,12 @@
     <div class="contact-form px-4 max-w-[500px] mx-auto">
     <form class="flex-row wrap justify-center items-center">
       <div class="flex flex-col pb-4">
-        <label for="name" class="uppercase tracking-widest pb-2">Cardholder name</label>
+        <label for="name" id="userName" class="uppercase tracking-widest pb-2">Cardholder name</label>
         <input autocomplete="off" type="text" id="fname" name="fname" placeholder="e.g. Jane Appleseed" required class="border rounded px-1 py-1 laceholder:font-light tracking-wider">
       </div>
       <div class="flex flex-col pb-4">
         <label for="card_number" class="uppercase tracking-widest pb-2">Card Number</label>
-        <input autocomplete="off" type="number" name="card_number" id="card_number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16" pattern="[0-9]* required" class="border rounded px-1 py-1 placeholder:font-light tracking-wider">
+        <input autocomplete="off" name="card_number" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000" class="border rounded px-1 py-1 placeholder:font-light tracking-wider">
       </div>
       <div>
         <div class="flex flex-row gap-1 pb-10">
@@ -52,5 +52,7 @@
     </form>
     </div>
   </div>
+  <script src="cleave.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
