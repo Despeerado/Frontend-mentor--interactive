@@ -6,4 +6,16 @@
   html {
     font-family: 'Space Grotesk', sans-serif;
   }
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+    
+  }
+  h1 {
+    color: red;
+    font-size: 40px;
+  }
 }
