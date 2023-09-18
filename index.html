@@ -20,29 +20,32 @@
 </head>
 <body>
   <div class="container mx-auto ">
-    <div class="contact-form px-4 max-w-[500px] mx-auto">
+    <div class="contact-form max-w-[500px] mx-auto">
     <form class="flex-row wrap justify-center items-center">
-      <div class="flex flex-col pb-4">
+      <div class="relative flex flex-col pb-4">
         <label for="name" id="userName" class="uppercase tracking-widest pb-2">Cardholder name</label>
         <input autocomplete="off" type="text" id="fname" name="fname" placeholder="e.g. Jane Appleseed" required class="border rounded px-1 py-1 laceholder:font-light tracking-wider">
+        <span id="errorName" class="absolute block text-xs bottom-0 text-red">Wrong name</span>
       </div>
-      <div class="flex flex-col pb-4">
+      <div class="relative flex flex-col pb-4">
         <label for="card_number" class="uppercase tracking-widest pb-2">Card Number</label>
         <input autocomplete="off" name="card_number" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000" class="border rounded px-1 py-1 placeholder:font-light tracking-wider">
+        <span id="errorCard" class="absolute block text-xs bottom-0 text-red">Wrong card number</span>
       </div>
       <div>
         <div class="flex flex-row gap-1 pb-10">
-          <div class="basis-full">
+          <div class="relative basis-full">
               <label for="month" class="uppercase tracking-widest pb-2">Exp. date (mm/yy)</label>
-              <div class="flex flex-row gap-2 relative">
+              <div class="flex flex-row gap-2">
                 <input autocomplete="off" name="mm" type="number" id="month" placeholder="MM" maxlength="2" pattern="[0-9]* required" class="border rounded px-1 py-1 w-1/2 placeholder:font-light tracking-wider ">
-                <span class="absolute top-8 text-xs text-red">Cant be blank</span>
                 <input autocomplete="off" name="yy" type="number" id="year" placeholder="YY" maxlength="4" pattern="[0-9]* required" class="border rounded px-1 py-1 w-1/2 placeholder:font-light tracking-wider ">
               </div>
-          </div>
-          <div class="basis-full grow shrink">
-            <label for="cvc" class="uppercase tracking-widest pb-2">cvc</label>
-            <input autocomplete="off" type="number" maxlength="3" pattern="[0-9]*" name="cvc" id="cvc" placeholder="e.g.123" class="border rounded px-1 py-1 w-full placeholder:font-light tracking-wider">
+              <span id="errorDate" class="absolute block text-xs text-red">Wrong card date</span>
+            </div>
+            <div class="relative basis-full">
+              <label for="cvc" class="uppercase tracking-widest pb-2">cvc</label>
+              <input autocomplete="off" type="number" maxlength="3" pattern="[0-9]*" name="cvc" id="cvc" placeholder="e.g.123" class="border rounded px-1 py-1 w-full placeholder:font-light tracking-wider">
+              <span id="errorCvc" class="absolute block text-xs text-red">Can't be blank</span>
           </div>
         </div>
       </div>

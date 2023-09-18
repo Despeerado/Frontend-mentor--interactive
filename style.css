@@ -663,8 +663,16 @@ h1 {
   position: relative;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .top-8 {
   top: 2rem;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .mx-auto {
@@ -817,6 +825,11 @@ h1 {
 
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+
+.text-red {
+  --tw-text-opacity: 1;
+  color: rgb(255 82 82 / var(--tw-text-opacity));
 }
 
 .text-white {
