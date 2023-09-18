@@ -655,6 +655,10 @@ h1 {
   }
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -665,14 +669,6 @@ h1 {
 
 .bottom-0 {
   bottom: 0px;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
-.top-0 {
-  top: 0px;
 }
 
 .mx-auto {
@@ -704,17 +700,6 @@ h1 {
 
 .max-w-\[500px\] {
   max-width: 500px;
-}
-
-.shrink {
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
-}
-
-.grow {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 .basis-full {
@@ -767,6 +752,11 @@ h1 {
 .border-darkViolet {
   --tw-border-opacity: 1;
   border-color: rgb(33 9 47 / var(--tw-border-opacity));
+}
+
+.border-red {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 82 82 / var(--tw-border-opacity));
 }
 
 .bg-darkViolet {
@@ -835,6 +825,10 @@ h1 {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.error {
+  visibility: hidden;
 }
 
 .placeholder\:font-light::-webkit-input-placeholder {

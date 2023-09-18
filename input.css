@@ -19,3 +19,7 @@
     font-size: 40px;
   }
 }
+
+.error {
+  visibility: hidden;
+}

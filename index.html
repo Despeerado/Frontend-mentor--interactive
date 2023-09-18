@@ -8,53 +8,54 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-  <div class="container mx-auto ">
+  <div class="container mx-auto card_form'">
     <div class="contact-form max-w-[500px] mx-auto">
-    <form class="flex-row wrap justify-center items-center">
+      <form id="cardForm"  action="/" method="POST">
+      <div id="formGroup" class="flex-row wrap justify-center items-center">
       <div class="relative flex flex-col pb-4">
-        <label for="name" id="userName" class="uppercase tracking-widest pb-2">Cardholder name</label>
-        <input autocomplete="off" type="text" id="fname" name="fname" placeholder="e.g. Jane Appleseed" required class="border rounded px-1 py-1 laceholder:font-light tracking-wider">
-        <span id="errorName" class="absolute block text-xs bottom-0 text-red">Wrong name</span>
+        <label for="name" name="username" class="uppercase tracking-widest pb-2">Cardholder name</label>
+        <input autocomplete="off" type="text" id="userName" name="name" placeholder="e.g. Jane Appleseed" class="border rounded px-1 py-1 laceholder:font-light tracking-wider">
+        <span id="errorName" class="absolute block text-xs bottom-0 text-red error ">wrong name</span>
       </div>
       <div class="relative flex flex-col pb-4">
         <label for="card_number" class="uppercase tracking-widest pb-2">Card Number</label>
         <input autocomplete="off" name="card_number" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000" class="border rounded px-1 py-1 placeholder:font-light tracking-wider">
-        <span id="errorCard" class="absolute block text-xs bottom-0 text-red">Wrong card number</span>
+        <span id="errorCard" class="absolute block text-xs bottom-0 text-red error">Wrong card number</span>
       </div>
       <div>
         <div class="flex flex-row gap-1 pb-10">
           <div class="relative basis-full">
-              <label for="month" class="uppercase tracking-widest pb-2">Exp. date (mm/yy)</label>
+              <label for="date" class="uppercase tracking-widest pb-2">Exp. date (mm/yy)</label>
               <div class="flex flex-row gap-2">
                 <input autocomplete="off" name="mm" type="number" id="month" placeholder="MM" maxlength="2" pattern="[0-9]* required" class="border rounded px-1 py-1 w-1/2 placeholder:font-light tracking-wider ">
                 <input autocomplete="off" name="yy" type="number" id="year" placeholder="YY" maxlength="4" pattern="[0-9]* required" class="border rounded px-1 py-1 w-1/2 placeholder:font-light tracking-wider ">
               </div>
-              <span id="errorDate" class="absolute block text-xs text-red">Wrong card date</span>
+              <span id="errorDate" class="absolute block text-xs text-red error">Wrong card date</span>
             </div>
             <div class="relative basis-full">
               <label for="cvc" class="uppercase tracking-widest pb-2">cvc</label>
               <input autocomplete="off" type="number" maxlength="3" pattern="[0-9]*" name="cvc" id="cvc" placeholder="e.g.123" class="border rounded px-1 py-1 w-full placeholder:font-light tracking-wider">
-              <span id="errorCvc" class="absolute block text-xs text-red">Can't be blank</span>
+              <span id="errorCvc" class="absolute block text-xs text-red error">Can't be blank</span>
           </div>
         </div>
       </div>
       <div class="w-full">
-        <input type="submit" value="Confirm" class="bg-darkViolet text-white px-4 py-2 w-full border rounded border-darkViolet">
+        <input type="submit" value="Confirm" class="bg-darkViolet text-white px-4 py-2 w-full border rounded border-darkViolet" id="submit">
       </div>
+    </div>
     </form>
     </div>
+    <div id="modal" class="invisible" >
+      <h1>Ahoj</h1>
+    </div>
   </div>
+  
   <script src="cleave.min.js"></script>
   <script src="script.js"></script>
 </body>
