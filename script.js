@@ -26,31 +26,6 @@ let isValidCardMonth = false;
 let isValidCardYear = false;
 let isValidCardCVC = false;
 
-const events = ['focus', 'keyup', 'keypress'];
-
-new Cleave('#cardNumber', {
-	creditCard: true,
-	delimiter: ' ',
-	numericOnly: true,
-});
-
-new Cleave('#month', {
-    date: true,
-		datePattern: ['m'],
-		numericOnly: true,
-});
-
-new Cleave('#year', {
-    date: true,
-		datePattern: ['y'],
-		numericOnly: true,
-});
-
-	new Cleave('#cvc', {
-		numericOnly: true,
-		blocks: [3],
-	});
-
 	// function validation() {
 	// if (isValidCardName && isValidCardNumber && isValidCardMonth && isValidCardYear && isValidCardCVC) {
 	// 	alert("Done")
@@ -75,6 +50,31 @@ function validate(e) {
 }
 
 ready(() => {
+
+	const events = ['focus', 'keyup', 'keypress'];
+
+new Cleave('#cardNumber', {
+	creditCard: true,
+	delimiter: ' ',
+	numericOnly: true,
+});
+
+new Cleave('#month', {
+    date: true,
+		datePattern: ['m'],
+		numericOnly: true,
+});
+
+new Cleave('#year', {
+    date: true,
+		datePattern: ['y'],
+		numericOnly: true,
+});
+
+	new Cleave('#cvc', {
+		numericOnly: true,
+		blocks: [3],
+	});
 
 	events.forEach((evt) => {
 
