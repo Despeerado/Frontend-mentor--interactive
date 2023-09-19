@@ -20,13 +20,13 @@
 <body>
   <main class="card_form">
     <section
-      class="card-information bg-[url('/images/bg-main-mobile.png')] bg-custom bg-no-repeat md:flex md:items-center md:bg-[url('/images/bg-main-desktop.png')] md:bg-no-repeat md:min-h-screen pt-8 lg:pt-0">
+      class="card-information bg-[url('/images/bg-main-mobile.png')] bg-custom md:flex md:items-center md:bg-[url('/images/bg-main-desktop.png')] bg-no-repeat md:min-h-screen pt-8 lg:pt-0">
       <div class="basis-2/4">
         <div class="relative mx-auto w-[300px] lg:w-[400px]">
           <img src="/images/bg-card-back.png" alt="card back" class="flex w-full card-back-img" />
 
           <div class="absolute card-back">
-            <span class="block text-white tracking-wider text-sm">000</span>
+            <span id="spanCVC" class="block text-white tracking-wider text-sm">000</span>
           </div>
         </div>
         <div class="relative mx-auto w-[300px] lg:w-[400px]">
@@ -41,13 +41,19 @@
 
             <div class="flex flex-row justify-between w-[250px] text-white pt-[10px]">
               <span id="spanName" class="text-xs uppercase font-light tracking-widest">Jane Aplleseed</span>
-              <span id="spanCVC" class="text-xs font-light tracking-widest">00/00</span>
+              <div>
+                <span id="spanMonth" class="text-xs font-light tracking-widest">00</span>
+                <span class="text-xs">/</span>
+                <span id="spanYear" class="text-xs font-light tracking-widest">00</span>
+
+              </div>
+
             </div>
           </div>
         </div>
       </div>
       <div class="contact-form basis-2/4 max-w-[400px] mx-auto">
-        <form id="cardForm" action="/" method="POST">
+        <form id="cardForm" onsubmit="return false;" method="POST">
           <div id="formGroup" class="flex-row wrap justify-center items-center px-4">
             <div class="relative flex flex-col pb-6">
               <label for="userName" class="uppercase tracking-widest pb-2 text-sm">Cardholder name</label>
@@ -66,9 +72,9 @@
               <div class="relative basis-full">
                 <label for="mm" class="uppercase tracking-widest pb-2 text-xs sm:text-sm">Exp. date (mm/yy)</label>
                 <div class="flex flex-row gap-2">
-                  <input id="month" autocomplete="off" name="mm" placeholder="MM" pattern="[0-9]* required"
+                  <input id="month" autocomplete="off" name="mm" placeholder="MM" required
                     class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px]  w-16" />
-                  <input autocomplete="off" name="yy" id="year" placeholder="YY" pattern="[0-9]* required"
+                  <input autocomplete="off" name="yy" id="year" placeholder="YY" required
                     class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px] w-16" />
                 </div>
                 <span id="errorDate" class="absolute block text-xs text-red error">Wrong card date</span>
@@ -82,7 +88,7 @@
             </div>
 
             <div class="w-full">
-              <button type="submit"
+              <button type="submit" onclick="validate();"
                 class="bg-darkViolet text-white text-xl px-4 py-4 w-full border rounded-md border-r-8 border-darkViolet hover:drop-shadow-lg"
                 id="submit">
                 Confirm
@@ -90,11 +96,11 @@
             </div>
           </div>
         </form>
-        <div id="modal" class="text-center m-w-[500px] mx-0 bg-white">
+        <div id="modal" class=" pb-[71px] text-center m-w-[500px] mx-[40px] bg-white hidden my-auto">
           <img src="/images/icon-complete.svg" alt="complete" class="mx-auto pb-4">
           <span class="inline-block uppercase font-bold text-3xl pb-4">Thank you!</span>
           <p class="text-lg text-darkGray pb-8">We've added your card details</p>
-          <button
+          <button onclick="reset();"
             class="bg-darkViolet text-white text-xl px-[5rem] h-[3.5rem] leading-[3.5rem] border rounded-xl border-darkViolet hover:drop-shadow-lg">Continue</button>
         </div>
       </div>
