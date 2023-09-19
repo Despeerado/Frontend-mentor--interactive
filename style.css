@@ -710,14 +710,6 @@ h1 {
   height: auto;
 }
 
-.min-h-screen {
-  min-height: 100vh;
-}
-
-.min-h-full {
-  min-height: 100%;
-}
-
 .w-1\/2 {
   width: 50%;
 }
@@ -738,14 +730,14 @@ h1 {
   max-width: 20rem;
 }
 
+.basis-2\/4 {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
 .basis-full {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-}
-
-.basis-3\/6 {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
 }
 
 .-translate-x-5 {
@@ -850,14 +842,6 @@ h1 {
   background-image: url('/images/bg-main-mobile.png');
 }
 
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-center {
-  background-position: center;
-}
-
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
@@ -898,16 +882,12 @@ h1 {
   padding-bottom: 2rem;
 }
 
-.pt-8 {
-  padding-top: 2rem;
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pt-\[10px\] {
   padding-top: 10px;
-}
-
-.align-middle {
-  vertical-align: middle;
 }
 
 .text-lg {
@@ -959,6 +939,16 @@ h1 {
   visibility: hidden;
 }
 
+.bg-custom {
+  background-size: 100% 35%;
+}
+
+@media only screen and (min-width: 768px) {
+  .bg-custom {
+    background-size: 30% 100%;
+  }
+}
+
 .placeholder\:font-light::-webkit-input-placeholder {
   font-weight: 300;
 }
@@ -976,26 +966,31 @@ h1 {
 }
 
 @media (min-width: 768px) {
-  .md\:flex-row {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+  .md\:flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .md\:min-h-screen {
+    min-height: 100vh;
+  }
+
+  .md\:items-center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .md\:bg-\[url\(\'\/images\/bg-main-desktop\.png\'\)\] {
     background-image: url('/images/bg-main-desktop.png');
   }
 
-  .md\:bg-cover {
-    background-size: cover;
-  }
-
-  .md\:bg-center {
-    background-position: center;
-  }
-
   .md\:bg-no-repeat {
     background-repeat: no-repeat;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
   }
 }

@@ -23,3 +23,13 @@
 .error {
   visibility: hidden;
 }
+
+.bg-custom {
+  background-size: 100% 35%;
+}
+
+@media only screen and (min-width: 768px) {
+.bg-custom {
+  background-size: 30% 100%;
+  }
+}
