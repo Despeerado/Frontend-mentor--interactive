@@ -71,9 +71,6 @@ function validate(e) {
 		document.getElementById('modal').classList.remove('invisible');
 		document.getElementsByClassName('contact-form')[0].classList.add('invisible');
 	}
-	else {
-		alert("Ne ne")
-	}
 	return valid;
 }
 
