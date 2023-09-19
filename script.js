@@ -149,7 +149,7 @@ new Cleave('#year', {
 
 			if (cardCVC.value == undefined || cardCVC.value.trim().length <= 0) {
 				cardCVC.classList.add('border-red');
-				errorCVC.innerHTML = "CVC must not be empty";
+				errorCVC.innerHTML = "Can't be blank";
 				errorCVC.classList.remove('error');
 				isValidCardCVC = false;
 				return;

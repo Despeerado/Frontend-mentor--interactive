@@ -2,102 +2,100 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
 
 <body>
   <main class="card_form">
-    <section class="card-information container 
-    bg-[url('/images/bg-main-mobile.png')] 
-    bg-custom
-    bg-no-repeat
-    pt-2
-      md:flex md:items-center 
-      md:bg-[url('/images/bg-main-desktop.png')] 
-      md:bg-no-repeat 
-      md:min-h-screen
-      md:p-0">
-      <div class="images basis-2/4">
-        <div class="relative mx-auto max-w-xs">
-          <div class="image">
-            <img src="/images/bg-card-back.png" alt="card back"
-              class="max-w-[300px] h-auto mx-auto transform translate-x-5">
-          </div>
-          <div class="absolute transform translate-x-[240px] -translate-y-[94px]">
+    <section
+      class="card-information bg-[url('/images/bg-main-mobile.png')] bg-custom bg-no-repeat md:flex md:items-center md:bg-[url('/images/bg-main-desktop.png')] md:bg-no-repeat md:min-h-screen pt-8 lg:pt-0">
+      <div class="basis-2/4">
+        <div class="relative mx-auto w-[300px] lg:w-[400px]">
+          <img src="/images/bg-card-back.png" alt="card back" class="flex w-full card-back-img" />
+
+          <div class="absolute card-back">
             <span class="block text-white tracking-wider text-sm">000</span>
           </div>
         </div>
-        <div class="relative mx-auto max-w-xs">
-          <div class=" relative top-2">
-            <img src="/images/bg-card-front.png" alt="card front"
-              class="max-w-[300px] h-auto mx-auto transform -translate-x-5 -translate-y-20">
-            <div class="absolute bottom-24 left-4">
-              <img src="/images/card-logo.svg" alt="card_logo" class=" max-w-[70px] top-0 h-auto pb-8">
-              <span class="text-white text-lg tracking-widest ">0000 0000 00000 0000</span>
-              <div class="flex flex-row justify-between text-white pt-[10px]">
-                <span class="text-xs uppercase font-light tracking-widest">Jane Aplleseed</span>
-                <span class="text-xs font-light tracking-widest">00/00</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="contact-form basis-2/4">
-        <form id="cardForm" action="/" method="POST">
-          <div id="formGroup" class="flex-row wrap justify-center items-center px-4">
-            <div class="relative flex flex-col pb-4">
-              <label for="userName" class="uppercase tracking-widest pb-2">Cardholder name</label>
-              <input autocomplete="off" type="text" id="userName" name="name" placeholder="e.g. Jane Appleseed"
-                class="border rounded px-1 py-1 laceholder:font-light tracking-wider">
-              <span id="errorName" class="absolute block text-xs bottom-0 text-red error ">wrong name</span>
-            </div>
-            <div class="relative flex flex-col pb-4">
-              <label for="cardNumber" class="uppercase tracking-widest pb-2">Card Number</label>
-              <input autocomplete="off" name="card_number" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000"
-                class="border rounded px-1 py-1 placeholder:font-light tracking-wider">
-              <span id="errorCard" class="absolute block text-xs bottom-0 text-red error">Wrong card number</span>
+        <div class="relative mx-auto w-[300px] lg:w-[400px]">
+          <img src="/images/bg-card-front.png" alt="card front" class="flex w-full card-front-img" />
+          <div class="absolute card-front w-full flex flex-col items-start">
+            <div class="md:h-[20px] lg:h-auto">
+              <img src="/images/card-logo.svg" alt="card_logo" class="max-w-[70px] top-0 card-data-front-logo" />
             </div>
             <div>
-              <div class="flex flex-row gap-1 pb-10">
-                <div class="relative basis-full">
-                  <label for="mm" class="uppercase tracking-widest pb-2">Exp. date (mm/yy)</label>
-                  <div class="flex flex-row gap-2">
-                    <input id="month" autocomplete="off" name="mm" placeholder="MM" pattern="[0-9]* required"
-                      class="border rounded px-1 py-1 w-1/2 placeholder:font-light tracking-wider ">
-                    <input autocomplete="off" name="yy" id="year" placeholder="YY" pattern="[0-9]* required"
-                      class="border rounded px-1 py-1 w-1/2 placeholder:font-light tracking-wider ">
-                  </div>
-                  <span id="errorDate" class="absolute block text-xs text-red error">Wrong card date</span>
+              <span id="spanNumber" class="text-white text-lg tracking-widest">0000 0000 00000 0000</span>
+            </div>
+
+            <div class="flex flex-row justify-between w-[250px] text-white pt-[10px]">
+              <span id="spanName" class="text-xs uppercase font-light tracking-widest">Jane Aplleseed</span>
+              <span id="spanCVC" class="text-xs font-light tracking-widest">00/00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form basis-2/4 max-w-[400px] mx-auto">
+        <form id="cardForm" action="/" method="POST">
+          <div id="formGroup" class="flex-row wrap justify-center items-center px-4">
+            <div class="relative flex flex-col pb-6">
+              <label for="userName" class="uppercase tracking-widest pb-2 text-sm">Cardholder name</label>
+              <input autocomplete="off" type="text" id="userName" name="name" placeholder="e.g. Jane Appleseed"
+                class="border rounded px-1 py-1 laceholder:font-light tracking-wider h-[40px]" />
+              <span id="errorName" class="absolute block text-xs bottom-0 text-red error">wrong name</span>
+            </div>
+            <div class="relative flex flex-col pb-6">
+              <label for="cardNumber" class="uppercase tracking-widest pb-2 text-sm">Card Number</label>
+              <input autocomplete="off" name="card_number" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000"
+                class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px]" />
+              <span id="errorCard" class="absolute block text-xs bottom-0 text-red error">Wrong card number</span>
+            </div>
+
+            <div class="flex flex-row gap-1 pb-6 justify-between items-center">
+              <div class="relative basis-full">
+                <label for="mm" class="uppercase tracking-widest pb-2 text-xs sm:text-sm">Exp. date (mm/yy)</label>
+                <div class="flex flex-row gap-2">
+                  <input id="month" autocomplete="off" name="mm" placeholder="MM" pattern="[0-9]* required"
+                    class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px]  w-16" />
+                  <input autocomplete="off" name="yy" id="year" placeholder="YY" pattern="[0-9]* required"
+                    class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px] w-16" />
                 </div>
-                <div class="relative basis-full">
-                  <label for="cvc" class="uppercase tracking-widest pb-2">cvc</label>
-                  <input autocomplete="off" pattern="[0-9]*" name="cvc" id="cvc" placeholder="e.g.123"
-                    class="border rounded px-1 py-1 w-full placeholder:font-light tracking-wider">
-                  <span id="errorCvc" class="absolute block text-xs text-red error">Can't be blank</span>
-                </div>
+                <span id="errorDate" class="absolute block text-xs text-red error">Wrong card date</span>
+              </div>
+              <div class="relative basis-full">
+                <label for="cvc" class="uppercase tracking-widest pb-2 text-sm">cvc</label>
+                <input autocomplete="off" pattern="[0-9]*" name="cvc" id="cvc" placeholder="e.g.123"
+                  class="border rounded px-1 py-1 w-full placeholder:font-light tracking-wider h-[40px]" />
+                <span id="errorCvc" class="absolute block text-xs text-red error">Can't be blank</span>
               </div>
             </div>
+
             <div class="w-full">
-              <button type="submit" class="bg-darkViolet text-white px-4 py-2 w-full border rounded border-darkViolet"
-                id="submit">Confirm</button>
+              <button type="submit"
+                class="bg-darkViolet text-white text-xl px-4 py-4 w-full border rounded-md border-r-8 border-darkViolet hover:drop-shadow-lg"
+                id="submit">
+                Confirm
+              </button>
             </div>
           </div>
         </form>
-        <div id="modal" class="invisible">
-          <span>Ahoj</span>
+        <div id="modal" class="text-center m-w-[500px] mx-0 bg-white">
+          <img src="/images/icon-complete.svg" alt="complete" class="mx-auto pb-4">
+          <span class="inline-block uppercase font-bold text-3xl pb-4">Thank you!</span>
+          <p class="text-lg text-darkGray pb-8">We've added your card details</p>
+          <button
+            class="bg-darkViolet text-white text-xl px-[5rem] h-[3.5rem] leading-[3.5rem] border rounded-xl border-darkViolet hover:drop-shadow-lg">Continue</button>
         </div>
       </div>
     </section>
