@@ -57,13 +57,13 @@
             <div class="relative flex flex-col pb-6">
               <label for="userName" class="uppercase tracking-widest pb-2 text-sm">Cardholder name</label>
               <input autocomplete="off" type="text" id="userName" name="name" placeholder="e.g. Jane Appleseed"
-                class="border rounded px-1 py-1 laceholder:font-light tracking-wider h-[40px]" />
+                class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px] outline-none" />
               <span id="errorName" class="absolute block text-xs bottom-0 text-red error">wrong name</span>
             </div>
             <div class="relative flex flex-col pb-6">
               <label for="cardNumber" class="uppercase tracking-widest pb-2 text-sm">Card Number</label>
               <input autocomplete="off" name="card_number" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000"
-                class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px]">
+                class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px] outline-none">
               <span id="errorCard" class="absolute block text-xs bottom-0 text-red error">Wrong card number</span>
             </div>
 
@@ -72,16 +72,16 @@
                 <label for="mm" class="uppercase tracking-widest pb-2 text-xs sm:text-sm">Exp. date (mm/yy)</label>
                 <div class="flex flex-row gap-2">
                   <input id="month" autocomplete="off" name="mm" placeholder="MM" required
-                    class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px]  w-16">
+                    class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px]  w-16 outline-none">
                   <input autocomplete="off" name="yy" id="year" placeholder="YY" required
-                    class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px] w-16">
+                    class="border rounded px-1 py-1 placeholder:font-light tracking-wider h-[40px] w-16 outline-none">
                 </div>
                 <span id="errorDate" class="absolute block text-xs text-red error">Wrong card date</span>
               </div>
               <div class="relative basis-full">
                 <label for="cvc" class="uppercase tracking-widest pb-2 text-sm">cvc</label>
                 <input autocomplete="off" pattern="[0-9]*" name="cvc" id="cvc" placeholder="e.g.123"
-                  class="border rounded px-1 py-1 w-full placeholder:font-light tracking-wider h-[40px]">
+                  class="border rounded px-1 py-1 w-full placeholder:font-light tracking-wider h-[40px] outline-none">
                 <span id="errorCvc" class="absolute block text-xs text-red error">Can't be blank</span>
               </div>
             </div>
@@ -106,7 +106,7 @@
     </section>
   </main>
   <script src="cleave.min.js"></script>
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>

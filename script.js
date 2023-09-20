@@ -52,7 +52,7 @@ ready(() => {
 		date: true,
 		datePattern: ['m'],
 		numericOnly: true,
-	}); a
+	});
 
 	new Cleave('#year', {
 		date: true,
