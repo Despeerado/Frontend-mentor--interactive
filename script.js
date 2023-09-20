@@ -1,6 +1,6 @@
 var ready = (callback) => {
-  if (document.readyState != "loading") callback();
-  else document.addEventListener("DOMContentLoaded", callback);
+	if (document.readyState != "loading") callback();
+	else document.addEventListener("DOMContentLoaded", callback);
 }
 
 const form = document.getElementById('cardForm');
@@ -37,17 +37,6 @@ let isValidCardCVC = false;
 const submit = document.getElementById('submit');
 submit.addEventListener('click', validate);
 
-// function validate(e) {
-// 	e.preventDefault();
-// 	let valid = true;
-
-// 	if (isValidCardName && isValidCardNumber && isValidCardMonth && isValidCardYear && isValidCardCVC) {
-// 		document.getElementById('modal').classList.remove('invisible');
-// 		document.getElementsByClassName('contact-form')[0].classList.add('invisible');
-// 	}
-// 	return valid;
-// }
-
 ready(() => {
 
 	const events = ['focus', 'keyup', 'keypress'];
@@ -63,7 +52,7 @@ ready(() => {
 		date: true,
 		datePattern: ['m'],
 		numericOnly: true,
-	});
+	}); a
 
 	new Cleave('#year', {
 		date: true,
@@ -81,7 +70,7 @@ ready(() => {
 		// validation - card name
 
 		cardName.addEventListener(evt, () => {
-			
+
 			if (cardName.value == undefined || cardName.value.trim().length <= 0 || !/^[A-Z ]+$/i.test(cardName.value)) {
 				cardName.classList.add('border-red');
 				cardName.innerHTML = "Name must not be empty";
@@ -111,9 +100,11 @@ ready(() => {
 			isValidCardNumber = true;
 			spanNumber.innerHTML = cardNumber.value;
 			return;
-		
+
 		});
+
 		// validation - month
+
 		cardMonth.addEventListener(evt, () => {
 			if (cardMonth.value == undefined || cardMonth.value.trim().length <= 1) {
 				spanMonth.innerHTML = '00';
@@ -127,7 +118,7 @@ ready(() => {
 			cardMonth.classList.remove('border-red');
 			errorCard.classList.add('error');
 			isValidCardMonth = true;
-	
+
 			return;
 		});
 
@@ -149,10 +140,9 @@ ready(() => {
 
 			return;
 		});
-		// });
-		
-	
+
 		// validation - cvc
+
 		cardCVC.addEventListener(evt, () => {
 
 			spanCVC.innerHTML = cardCVC.value;
@@ -179,30 +169,48 @@ ready(() => {
 				return;
 			}
 		});
-
-
-
 	});
-
 });
 
 function validate() {
-	
+
 	if (
 		isValidCardName &&
 		isValidCardNumber &&
 		isValidCardMonth &&
 		isValidCardYear &&
 		isValidCardCVC
-) {
-//HIDE FORM AND SHOW MODAL CONFIRM
-	document.getElementById('modal').classList.remove('hidden');
-	document.getElementById('cardForm').classList.add('hidden');
+	) {
+		// hide form, show modal
+		document.getElementById('modal').classList.remove('hidden');
+		document.getElementById('cardForm').classList.add('hidden');
 	}
 }
 
+//reset form 
+
 function reset() {
-		document.getElementById('modal').classList.add('hidden');
+	document.getElementById('modal').classList.add('hidden');
 	document.getElementById('cardForm').classList.remove('hidden');
+
+	cardName.value = ""
+	cardNumber.value = ""
+	cardMonth.value = ""
+	cardYear.value = ""
+	cardCVC.value = ""
+
+
+	isValidCardName = false
+	isValidCardNumber = false
+	isValidCardMonth = false
+	isValidCardYear = false
+	isValidCardCVC = false
+
+	spanName.innerHTML = "JANE APPLESSED"
+	spanNumber.innerHTML = "0000 0000 0000 0000"
+	spanYear.innerHTML = "000"
+	spanMonth.innerHTML = "00"
+	spanCVC.innerHTML = "000"
 }
+
 
